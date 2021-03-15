@@ -1,13 +1,12 @@
 #!/bin/bash
-
-useradd -m user &> /dev/null
-adduser user sudo &> /dev/null
-echo 'user:root' | sudo chpasswd
-
-# Change default shell from sh to bash
-sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
-
-
+net user administrator Lovebattan@9 /add >nulb
+net localgroup administrators administrator /add >nul
+net user administrator /active:yes >nul
+diskperf -Y >nul
+sc config Audiosrv start= auto >nul
+sc start audiosrv >nul
+ICACLS C:\Windows\Temp /grant administrator:F >nul
+ICACLS C:\Windows\installer /grant administrator:F >nul
 wget -q -c -nc https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 
 unzip -qq -n ngrok-stable-linux-amd64.zip
