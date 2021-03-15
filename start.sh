@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo useradd -m user &> /dev/null
-sudo adduser user sudo &> /dev/null
+useradd -m user &> /dev/null
+adduser user sudo &> /dev/null
 echo 'user:root' | sudo chpasswd
 
 # Change default shell from sh to bash
