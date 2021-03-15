@@ -1,12 +1,11 @@
 #!/bin/bash
-username = "user" 
-password = "root" 
-sudo useradd -m $username &> /dev/null
-sudo adduser $username sudo &> /dev/null
-echo '$username:$password' | sudo chpasswd
+
+sudo useradd -m user &> /dev/null
+sudo adduser user sudo &> /dev/null
+echo 'user:root' | sudo chpasswd
 
 # Change default shell from sh to bash
-! sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
+sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 
 
 wget -q -c -nc https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
