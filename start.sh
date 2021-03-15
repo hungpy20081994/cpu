@@ -1,15 +1,13 @@
 #!/bin/bash
-apt-get install -qq -o=Dpkg::Use-Pty=0 openssh-server pwgen > /dev/null
+username = "user" 
+password = "root" 
+sudo useradd -m $username &> /dev/null
+sudo adduser $username sudo &> /dev/null
+echo '$username:$password' | sudo chpasswd
 
-#Set root password
+# Change default shell from sh to bash
+! sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 
-echo root:password | chpasswd
-
-mkdir -p /var/run/sshd
-
-echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
-
-echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 
 wget -q -c -nc https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 
